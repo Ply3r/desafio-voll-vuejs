@@ -17,6 +17,23 @@
   --second-color: #3c005c;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0E10;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
 .gradient-backgroud {
   background: linear-gradient(90deg,#c00052,#3c005c);
   display: grid;

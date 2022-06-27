@@ -1,6 +1,6 @@
 <template>
   <PageVue name="Dashboard">
-      <p>{{ `Welcome  ${role}!` }}</p>
+    <p>{{ `Welcome  ${getRole}!` }}</p>
   </PageVue>
 </template>
 
@@ -10,20 +10,15 @@ import PageVue from '@/components/Page.vue';
 
 export default {
   name: 'DashboardView',
-  data() {
-    return {
-      role: '',
-    };
-  },
   components: {
     PageVue,
   },
-  methods: {
+  computed: {
     getRole() {
-      this.role = store.getters.user.role;
+      return store.getters.user.role;
     },
   },
-  mounted() {
+  watch() {
     this.getRole();
   },
 };

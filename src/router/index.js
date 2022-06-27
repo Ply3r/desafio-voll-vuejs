@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../views/Login.vue';
 import Dashboard from '../views/Dashboard.vue';
+import Products from '../views/Products.vue';
 
 export const routes = [
   {
@@ -18,12 +19,12 @@ export const routes = [
     path: '/products',
     name: 'products',
     icon: 'fa-cart-shopping',
-    component: Dashboard,
+    component: Products,
   },
   {
     path: '/products/add',
     name: 'add Products',
-    icon: 'fa-cubes',
+    icon: 'fa-cart-plus',
     component: Dashboard,
   },
 ];

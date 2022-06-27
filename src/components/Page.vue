@@ -62,8 +62,11 @@ export default {
 
 <style scoped>
 .page {
+  position: absolute;
   width: 100vw;
   height: 100vh;
+  background-attachment: fixed;
+  overflow: hidden;
   display: flex;
   align-items: center;
   background-image: url('@/assets/background.png');
@@ -80,6 +83,7 @@ export default {
 
 .main-content {
   height: 100%;
+  width: 100%;
   padding: 50px 0px;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <button
+    class="bot"
     :disabled="isDisabled"
   >
     {{ title }}
@@ -17,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-button {
+.bot {
   width: 100%;
   background-color: #c00052;
   border: none;
@@ -30,7 +31,7 @@ button {
   color: white;
 }
 
-button:disabled {
+.bot:disabled {
   background-color: #c05986;
   cursor: auto;
 }
