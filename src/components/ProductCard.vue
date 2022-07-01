@@ -11,7 +11,19 @@
       class="product-buy-button"
       :class="{ complete, error }"
     >
-      Comprar
+      <div v-if="!complete && !error">Comprar</div>
+      <div v-else-if="complete && !error">
+        <font-awesome-icon
+          class="icon"
+          icon="fa-solid fa-circle-check"
+        />
+      </div>
+      <div v-else>
+        <font-awesome-icon
+          class="icon"
+          icon="fa-solid fa-circle-xmark"
+        />
+      </div>
     </ButtonComponent>
   </div>
 </template>
