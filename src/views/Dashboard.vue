@@ -1,17 +1,22 @@
 <template>
   <PageVue name="Dashboard">
     <p>{{ `Welcome  ${getRole}!` }}</p>
+    <div>
+      <Balance />
+    </div>
   </PageVue>
 </template>
 
 <script>
 import store from '@/store';
 import PageVue from '@/components/Page.vue';
+import Balance from '@/components/Balance.vue';
 
 export default {
   name: 'DashboardView',
   components: {
     PageVue,
+    Balance,
   },
   computed: {
     getRole() {

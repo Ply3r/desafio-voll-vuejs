@@ -1,5 +1,5 @@
 <template>
-  <Page name="Products">
+  <Page name="Produtos">
     <ProductFilter
       :search="search"
       :order="order"
