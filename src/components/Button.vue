@@ -3,7 +3,7 @@
     class="bot"
     :disabled="isDisabled"
   >
-    {{ title }}
+  <slot />
   </button>
 </template>
 

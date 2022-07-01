@@ -7,7 +7,6 @@
       class="icon-container"
     >
       <font-awesome-icon
-        @click="goToPage"
         class="icon"
         :icon="'fa-solid ' + icon"
       />
@@ -34,11 +33,6 @@ export default {
     path: String,
     left: Boolean,
     isMenuActive: Boolean,
-  },
-  methods: {
-    goToPage() {
-      router.push(this.path);
-    },
   },
   computed: {
     formatedName() {

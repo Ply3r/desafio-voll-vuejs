@@ -23,8 +23,9 @@
     <ButtonComponent
       @click="fetchLogin"
       :isDisabled="isBtnDisable"
-      title="Enter"
-    />
+    >
+      Enter
+    </ButtonComponent>
     <p v-if="error">Email or Password invalid!</p>
   </div>
 </template>

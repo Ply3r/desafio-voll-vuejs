@@ -13,6 +13,7 @@
         :key="route.name + ' - icon'"
       >
       <MenuIcons
+        @click="() => goToPage(route.path)"
         :icon="route.icon"
         :title="route.name"
         :path="route.path"
@@ -24,7 +25,7 @@
 
 <script>
 import MenuIcons from './MenuIcon.vue';
-import { routes } from '../router';
+import router, { routes } from '../router';
 
 export default {
   name: 'MenuComponent',
@@ -35,6 +36,11 @@ export default {
   },
   components: {
     MenuIcons,
+  },
+  methods: {
+    goToPage(path) {
+      router.push(path);
+    },
   },
   props: {
     togleMenu: {
@@ -60,7 +66,7 @@ export default {
   .menu {
     position: relative;
     background-color: white;
-    width: 60px;
+    width: 70px;
     height: 90%;
     display: flex;
     overflow: hidden;

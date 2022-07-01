@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {
   faBars,
   faCartPlus,
+  faCircleCheck,
+  faCircleXmark,
   faCubes,
   faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +14,14 @@ import router from './router';
 import store from './store';
 
 library
-  .add(faBars, faCubes, faShoppingCart, faCartPlus);
+  .add(
+    faBars,
+    faCubes,
+    faShoppingCart,
+    faCartPlus,
+    faCircleCheck,
+    faCircleXmark,
+  );
 
 createApp(App)
   .use(store)

@@ -1,13 +1,18 @@
 <template>
-  <div class="card-container">
+  <div
+    class="card-container"
+  >
     <img :src="data.image_1" :alt="data.name + ' image'">
     <h4>{{ data.name }}</h4>
     <p>{{ 'R$ ' + data.price.toFixed(2) }}</p>
     <p>{{ 'quantidade disponivel: ' + data.quantity }}</p>
     <ButtonComponent
+      @click="buyProduct"
       class="product-buy-button"
-      title="Comprar"
-    />
+      :class="{ complete, error }"
+    >
+      Comprar
+    </ButtonComponent>
   </div>
 </template>
 
@@ -31,16 +36,23 @@ export default {
     ButtonComponent,
   },
   methods: {
+    activateAttr(attr) {
+      this[attr] = true;
+      setTimeout(() => {
+        this[attr] = false;
+      }, 3000);
+    },
     async buyProduct() {
       const authorization = store.getters.token;
       const headers = { headers: { authorization } };
 
-      await axios.post(`https://desafiovollapi.herokuapp.com/purchase/${this.data.id}`, headers)
+      await axios.post(`https://desafiovollapi.herokuapp.com/purchase/${this.data.id}`, null, headers)
         .then(() => {
-
+          this.activateAttr('complete');
         })
         .catch(() => {
-
+          this.complete = false;
+          this.activateAttr('error');
         });
     },
   },
@@ -68,5 +80,13 @@ export default {
 .product-buy-button {
   margin: 0;
   padding: 5px;
+}
+
+.complete {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
 }
 </style>
